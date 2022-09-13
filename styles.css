@@ -109,3 +109,68 @@ li img {
     padding: 5px;
     cursor: pointer;
 }
+
+
+/* Validacion Formulario */
+
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #212529;
+    width: 360px;
+    height: 300px;
+    border-radius: 4px;
+    margin-top: 30px;
+}
+.form {
+    width: 240px;
+}
+.form-t {
+    color: #FFF;
+    font-family: sans-serif;
+    margin-bottom: 20px;
+}
+.form-input {
+    padding: 8px;
+    background-color: #343a40;
+    border: 0.1px solid transparent;
+}
+.form-input:focus {
+    outline: none;
+}
+.form-btn {
+    font-family: sans-serif;
+    padding: 4px 16px;
+}
+.form-control {
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+.form-label {
+    color: #FFF;
+    font-family: sans-serif;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+.form-control.ok input{
+    border: 0.1px solid #08ffc8;
+}
+.form-control.falla input {
+    border: 0.1px solid #fe5f55;
+}
+.form-control p {
+    visibility: hidden;
+    position: absolute;
+    font-size: small;
+    font-weight: 500;
+    top: 62px;
+}
+.form-control.falla p {
+    font-family: sans-serif;
+    visibility: visible;
+    color: #e74c3c;
+}

@@ -77,3 +77,58 @@ const start = () => {
 }
 
 start();
+
+/* Validacion Form */ 
+window.addEventListener("load", ()=> {
+    const form = document.getElementById("form")
+    const email = document.getElementById("email")
+    const pass = document.getElementById("pass")
+
+    form.addEventListener("submit", (e) => {
+        e.preventDefault()
+        validaCampos()
+    })
+
+    
+    const validaCampos = ()=> {
+        const emailValor = email.value.trim()
+        const passValor = pass.value.trim();
+        
+
+        if(!emailValor) {
+            validaFalla(email, "Campo vacío")
+        } else if(!validaEmail(emailValor)) {
+            validaFalla(email, "El e-mail no es válido")
+        } else {
+            validaOk(email)
+        }
+        
+        const er = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
+        if(!passValor) {
+            validaFalla(pass, "Campo vacío")
+        } else if(passValor.length < 8) {
+            validaFalla(pass, "Debe tener 8 caracteres como minimo")
+        } else if(!passValor.match(er)) {
+            validaFalla(pass, "Debe tener al menos una mayuscula, una minuscula y un numero")
+        } else {
+            validaOk(pass)
+        }
+
+    }
+
+    const validaFalla = (input, msje)  => {
+        const formControl = input.parentElement
+        const aviso = formControl.querySelector("p")
+        aviso.innerText = msje
+        
+        formControl.className = "form-control falla"
+    }
+    const validaOk = (input, msje)  => {
+        const formControl = input.parentElement
+        formControl.className = "form-control ok"
+    }
+
+    const validaEmail = (email) => {
+        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    }
+})
