@@ -21,8 +21,8 @@ let tareas = JSON.parse(localStorage.getItem("tareas")) || [];
 
 // almaceno TAREAS
 
-const saveTareas = (tareasList) => {
-    localStorage.setItem("tareas", JSON.stringify(tareasList));
+const saveTareas = (tareaList) => {
+    localStorage.setItem("tareas", JSON.stringify(tareaList));
 }
 
 //crear elemento a renderizar
@@ -54,7 +54,7 @@ const addTarea = e => {
 
 
     renderTareaList(tareas);
-    saveTareas(tarea);
+    saveTareas(tareas);
 }
 
 //eliminar pedido
@@ -76,7 +76,7 @@ const start = () => {
     tasksContainer.addEventListener("click",removeTarea);
 }
 
-start();
+
 
 /* Validacion Form */ 
 window.addEventListener("load", ()=> {
@@ -132,3 +132,5 @@ window.addEventListener("load", ()=> {
         return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
     }
 })
+
+start();

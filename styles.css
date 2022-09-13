@@ -118,11 +118,12 @@ li img {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #212529;
+    background-color: black;
     width: 360px;
     height: 300px;
     border-radius: 4px;
     margin-top: 30px;
+    margin-bottom: 50px;
 }
 .form {
     width: 240px;
@@ -133,6 +134,7 @@ li img {
     margin-bottom: 20px;
 }
 .form-input {
+    color: white;
     padding: 8px;
     background-color: #343a40;
     border: 0.1px solid transparent;
@@ -143,6 +145,7 @@ li img {
 .form-btn {
     font-family: sans-serif;
     padding: 4px 16px;
+    cursor: pointer;
 }
 .form-control {
     position: relative;
