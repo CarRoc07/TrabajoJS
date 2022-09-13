@@ -79,3 +79,33 @@
     background-color: black;
     cursor: pointer;
 }
+
+.content-toDo{
+    width: 40%;
+    margin-top: 30px;
+    padding: 15px;
+}
+
+li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 25px;
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+li p {
+    width: 80%;
+}
+
+li img {
+    width: 30px;
+    background-color: white;
+    padding: 5px;
+    cursor: pointer;
+}
