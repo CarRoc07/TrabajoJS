@@ -133,4 +133,39 @@ window.addEventListener("load", ()=> {
     }
 })
 
+
+// 4
+
+const peliculas = [
+    {nombre: "Titanic", fecha: 1997, src: "./imgs/titanic.jpg", desc: "Una joven de la alta sociedad abandona a su arrogante pretendiente por un artista humilde en el trasatlántico que se hundió durante su viaje inaugural."},
+    {nombre: "Harry Potter", fecha: 2001, src: "./imgs/harrypotter.jpg",desc: "El día de su cumpleaños, Harry Potter descubre que es hijo de dos conocidos hechiceros, de los que ha heredado poderes mágicos. Debe asistir a una famosa escuela de magia y hechicería, donde entabla una amistad con dos jóvenes que se convertirán en sus compañeros de aventura."},
+    {nombre: "El Hobbit", fecha: 2012, src: "./imgs/elhobbit.webp",desc: "La trilogía de El hobbit, adaptación cinematográfica basada en la novela homónima, comprende tres películas épicas de fantasía, acción y aventuras: El hobbit: un viaje inesperado, El hobbit: la desolación de Smaug y El hobbit: la batalla de los Cinco Ejércitos."},
+    {nombre: "Iron Man", fecha: 2008, src: "./imgs/ironman.jpg", desc: "Un empresario millonario construye un traje blindado y lo usa para combatir el crimen y el terrorismo."}
+];
+
+const cards = document.querySelector(".cards");
+
+const renderCard = pelicula => {
+    //desetructuro
+    const {nombre,fecha,src,desc} = pelicula;
+
+    return `
+        <div class="card">
+        <img src="${src}" alt="${nombre}" class="img">
+        <div class="card-info">
+            <h3> ${nombre} </h3>
+            <h4>${fecha}</h4>
+            <p> ${desc}</p>
+        </div>
+        </div>
+    `
+}
+
+const renderCards = peliculas => {
+    cards.innerHTML =peliculas.map(renderCard).join("");
+}
+
+window.addEventListener("onload", renderCards(peliculas));
+
+
 start();
